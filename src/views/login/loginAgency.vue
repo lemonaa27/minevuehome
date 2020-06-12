@@ -18,7 +18,7 @@
               auto-complete="on"
               label-position="left"
             >
-              <h3 class="title">产品授权服务平台</h3>
+              <h3 class="title">产品授权服务平台——代理商</h3>
               <div class="register-num">
                 您还没有授权账户?点击这里
                 <span style="color:#3073F8;cursor:pointer;" @click="handleRegister()">注册</span>
@@ -179,7 +179,7 @@ export default {
     if (window.localStorage.user_id !== '') {
       this.loginForm.username = window.localStorage.user_id
     }
-    window.localStorage.setItem('roleType','user')
+    window.localStorage.setItem('userRole','agency')
   },
   methods:{
     focusNum(num) {
@@ -228,8 +228,8 @@ export default {
           this.loading = true
           login(this.loginForm)
           .then(res=>{
-            window.localStorage.setItem('userRole','admin')
-            this.$router.push({path: '/agency/assetsInfo'})
+            window.localStorage.setItem('userRole','agency')
+            this.$router.push({path: '/agency/applyInfo'})
           })
           .catch(err=>{
             console.log(err)

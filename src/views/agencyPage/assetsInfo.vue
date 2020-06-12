@@ -1,10 +1,22 @@
 <template>
-  <div>总代理信息</div>
+  <div>
+    <navbar :navTitle="navTitle"></navbar>
+    guanli xinx
+  </div>
 </template>
 
 <script>
+import navbar from '@/components/nvaBar'
 export default {
-
+  components:{navbar},
+  data(){
+    return{
+      navTitle:''
+    }
+  },
+  created(){
+    this.navTitle = this.$route.meta.title;
+  }
 }
 </script>
 

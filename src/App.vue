@@ -17,5 +17,6 @@ export default {
 <style>
 #app {
   box-sizing: border-box;
+  background-color: #f2f2f2;
 }
 </style>
